@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "traffic-graph"
+version = "2.1.0"
+description = "Real-Time Traffic Digital Twin & Dynamic Route Intelligence Engine"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "networkx>=3.0",
+    "numpy>=1.24",
+    "pydantic>=2.0",
+    "fastapi>=0.100.0",
+    "xgboost>=2.0",
+    "scikit-learn>=1.3",
+    "sqlalchemy>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.24",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["traffic_graph*", "digital_twin*", "route_intelligence*", "incident_intelligence*", "traffic_prediction*", "network_optimization*", "emergency_intelligence*", "experiment_lab*", "community_intelligence*"]
